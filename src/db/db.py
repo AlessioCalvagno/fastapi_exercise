@@ -54,7 +54,7 @@ async def create_db_and_table():
         is_table_empty: bool = res.fetchone()[0] == 0
         
         if is_table_empty:
-            _init_records(cursor=tmp_connection)
+           await _init_records(cursor=tmp_connection)
         
         logger.info("Database init complete")
         
